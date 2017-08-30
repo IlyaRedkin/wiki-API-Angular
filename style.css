@@ -1,0 +1,46 @@
+body{
+	cursor: default;
+}
+
+.firstClick{
+	position: fixed;
+	top: 10px;
+	left: 250px;
+}
+.flag{
+	height: 100px;
+	border: solid black 1px;
+	/*width: 10%;*/
+}
+.countriesList{
+	display: block;
+	width: 200px;
+	/*overflow-y: auto;*/
+
+}
+.inline{
+	display: inline-block;
+	vertical-align: text-top;
+	margin: 10px;
+	border: 1px;
+	width: 250px;
+}
+.item{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.countryName{
+	font-size: 25px;
+}
+.cursor{
+	cursor: pointer;
+}
+.autoScroll{
+	height: 500px;
+	width: auto;
+	overflow-y: auto;
+}
+.autoScroll.langs{
+	height: 400px;
+}

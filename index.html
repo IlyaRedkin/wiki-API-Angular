@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script type="text/javascript" src="countryController.js"></script>
+	<script type="text/javascript" src="dataService.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="myApp">			
+	<div ng-controller="CountryController">
+		<ul class="countriesList">
+			<li class="cursor" ng-repeat="country in countriesList.list" ng-click="setSelectedCountry(country)">{{country.countryLabel.value}}</li>
+		</ul>
+		<div class="firstClick" ng-show="selectedCountry">
+			<div class="item countryName">{{selectedCountry.countryLabel.value}}</div>
+			
+			<div>
+				<div class="inline">
+					<div class="item">Флаг</div>
+					<img class="flag" ng-src="{{selectedCountry.flag.value}}"/>
+					<div class="item">Язык</div>
+					<div class="autoScroll langs">
+					<div ng-repeat="lang in selectedCountry.langs">
+						{{lang.langLabel.value}}
+					</div>
+					</div>
+				</div>
+				<div class="inline">
+					<div class="item">Соседние страны</div>
+					<li ng-repeat="neighbor in selectedCountry.neighbors">
+						{{neighbor.neighborLabel.value}}
+					</li>
+				</div>
+				<div class="inline">
+					<div class="item">Регионы</div>
+					<div class="autoScroll">
+					<div class="cursor" ng-repeat="region in selectedCountry.regions" ng-click="setSelectedRegion(region)">
+						{{region.regionLabel.value}}
+					</div>
+					</div>
+				</div>
+				<div class="inline" ng-show="selectedRegion">
+					<div class="item">Численность населения в регионе</div>
+					<div>
+						{{selectedRegion.popLabel.value}}
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</body>
+</html>
